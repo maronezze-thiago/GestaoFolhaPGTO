@@ -10,10 +10,10 @@ package gestaofinanceira3;
  */
 public abstract class funcionario {
     
-     private int id;
-    private String nome;
-    private String cpf;
-    private double salariobase;
+    public int id;
+    public String nome;
+    public String cpf;
+    public double salariobase;
 
     public funcionario(int id, String nome, String cpf, double salariobase) {
         this.id = id;
@@ -53,6 +53,11 @@ public abstract class funcionario {
     public void setSalariobase(double salariobase) {
         this.salariobase = salariobase;
     }
+
+    @Override
+    public String toString() {
+        return "funcionario{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", salariobase=" + salariobase + '}';
+    }
     
     
     
@@ -60,8 +65,9 @@ public abstract class funcionario {
     
     
     
-    abstract void calcularsalario();
-    
+   public double calcularsalario(){
+        return this.salariobase;
+    }
     
     
     
